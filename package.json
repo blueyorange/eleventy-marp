@@ -1,0 +1,19 @@
+{
+  "name": "eleventy-marp",
+  "version": "1.0.0",
+  "description": "A marp presentation server which uses eleventy.",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "author": "Russell Johnson",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  },
+  "dependencies": {
+    "@marp-team/marpit": "^2.5.0",
+    "child_process": "^1.0.2"
+  }
+}
