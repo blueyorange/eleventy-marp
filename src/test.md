@@ -1,7 +1,7 @@
 ---
 marp: true
-layout: base.njk
 math: katex
+layout: presentation
 ---
 
 # a non marp markdown file

@@ -1,5 +1,9 @@
-const { Marpit } = require("@marp-team/marpit");
+// import markdownIt from "markdown-it";
+// import Marpit from "@marp-team/marpit";
+// import marpConfig from "./marp.config.js";
+
 const markdownIt = require("markdown-it");
+const { Marpit } = require("@marp-team/marpit");
 const marpConfig = require("./marp.config.js");
 
 module.exports = function (eleventyConfig) {
