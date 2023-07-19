@@ -3,7 +3,7 @@
 // import marpConfig from "./marp.config.js";
 
 const markdownIt = require("markdown-it");
-const { Marp } = require("@marp-team/marp-core");
+const { Marp, Element } = require("@marp-team/marp-core");
 const marpConfig = require("./marp.config.js");
 
 module.exports = function (eleventyConfig) {
@@ -14,8 +14,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setLibrary("md", {
     render: function (content, data) {
       if (data.marp) {
-        const marp = new Marp(marpConfig);
-        const { html, css } = marp.render(content, { html: true });
+        const marp = new Marp({ ...marpConfig });
+        let { html, css } = marp.render(content, { html: true });
+        html = html.replace(
+          '<div class="marpit"',
+          '<div class="marpit" id="p"'
+        );
         return { html, css };
       } else {
         return md.render(content, data);

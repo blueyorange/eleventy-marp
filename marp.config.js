@@ -1,10 +1,11 @@
 module.exports = {
   html: true,
   ogp: false,
-  inlineSVG: false,
+  inlineSVG: true,
   markdown: {
     breaks: true,
     html: true,
   },
-  theme: "default",
+  math: "katex",
+  theme: "uncover",
 };

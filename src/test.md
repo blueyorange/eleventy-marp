@@ -2,6 +2,19 @@
 marp: true
 math: katex
 layout: presentation
+title: really cool lesson
+outcomes:
+  - learn some stuff
+  - learn it well
+---
+
+# learning objectives
+
+{% for outcome in outcomes %}
+
+- {{ outcome }}
+  {% endfor %}
+
 ---
 
 # a non marp markdown file
