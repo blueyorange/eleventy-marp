@@ -7,8 +7,8 @@ const { Marp, Element } = require("@marp-team/marp-core");
 const marpConfig = require("./marp.config.js");
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("./src/images");
   const md = markdownIt({ html: true });
-
   // Define a custom Markdown rendering engine that checks for the `marp: true`
   // flag in the page's frontmatter and uses Marp to render the content if the flag is set.
   eleventyConfig.setLibrary("md", {
@@ -20,7 +20,7 @@ module.exports = function (eleventyConfig) {
           '<div class="marpit"',
           '<div class="marpit" id="p"'
         );
-        return { html, css };
+        return `<style>${css}</style>${html}`;
       } else {
         return md.render(content, data);
       }

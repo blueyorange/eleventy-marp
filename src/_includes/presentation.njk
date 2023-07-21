@@ -865,7 +865,6 @@
         vertical-align: -0.1em;
         width: 1em;
       }
-        {{ content.css | safe }}
     </style>
 </head>
 <body>
@@ -889,7 +888,7 @@
         Open presenter view
       </button>
     </div>
-    {{ content.html | safe }}
+    {{ content | safe }}
       <script>
       /*!! License: https://unpkg.com/@marp-team/marp-cli@2.2.0/lib/bespoke.js.LICENSE.txt */
       !(function () {
