@@ -8,7 +8,7 @@ outcomes:
   - learn it well
 ---
 
-# learning objectives
+# learning objectivsdfsfs
 
 {% for outcome in outcomes %}
 
