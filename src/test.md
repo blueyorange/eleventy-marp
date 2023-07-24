@@ -1,7 +1,7 @@
 ---
 marp: true
 math: katex
-layout: presentation
+layout: base
 title: really cool lesson
 outcomes:
   - learn some stuff
@@ -19,7 +19,7 @@ outcomes:
 
 # a non marp markdown file
 
-here is some text
+here is some textsdfsd
 
 ---
 

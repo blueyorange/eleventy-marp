@@ -82,3 +82,7 @@ One farad is quite a large capacitance. It is normal for capacitance to be measu
 ![](/images/circuit_capacitor2.gif)
 
 ---
+
+sfsdf
+
+---
