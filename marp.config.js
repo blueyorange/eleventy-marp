@@ -5,6 +5,6 @@ module.exports = {
   markdown: {
     html: true,
   },
-  theme: "default",
+  theme: "gaia",
   container: [new Element("div", { id: "p" })],
 };

@@ -13,6 +13,7 @@
     "@11ty/eleventy": "^2.0.1"
   },
   "dependencies": {
+    "@marp-team/marp-core": "^3.7.0",
     "@marp-team/marpit": "^2.5.0",
     "child_process": "^1.0.2"
   }

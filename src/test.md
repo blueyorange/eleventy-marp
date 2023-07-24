@@ -8,6 +8,8 @@ outcomes:
   - learn it well
 ---
 
+<!-- theme: gaia -->
+
 # learning objectivsdfsfs
 
 {% for outcome in outcomes %}

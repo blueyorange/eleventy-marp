@@ -3,7 +3,7 @@ marp: true
 theme: default
 paginate: true
 author: R. Johnson
-layout: presentation
+layout: base
 ---
 
 # A Level Physics OCR A
