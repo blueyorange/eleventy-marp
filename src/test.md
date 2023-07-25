@@ -35,5 +35,5 @@ $$F=ma$$
 
 # fragments
 
-- fragment 1
-- fragment 2
+* fragment 1
+* fragment 2
