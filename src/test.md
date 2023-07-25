@@ -1,7 +1,7 @@
 ---
 marp: true
 math: katex
-layout: base
+layout: presentation
 title: really cool lesson
 outcomes:
   - learn some stuff
@@ -30,3 +30,10 @@ here is some textsdfsd
 more text
 
 $$F=ma$$
+
+---
+
+# fragments
+
+- fragment 1
+- fragment 2

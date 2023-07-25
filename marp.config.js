@@ -1,10 +1,20 @@
 const { Element } = require("@marp-team/marpit");
+const { Marp } = require("@marp-team/marp-core");
+const readCssFiles = require("./helpers/readCssFiles");
 
-module.exports = {
+const config = {
   inlineSVG: true,
   markdown: {
     html: true,
   },
-  theme: "gaia",
   container: [new Element("div", { id: "p" })],
 };
+
+const marp = new Marp(config);
+const themesDirectory = "./themes";
+readCssFiles(themesDirectory).forEach((themeCss) => {
+  console.log(themeCss);
+  marp.themeSet.add(themeCss.content);
+});
+
+module.exports = marp;

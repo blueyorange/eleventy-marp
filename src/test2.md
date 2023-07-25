@@ -3,7 +3,7 @@ marp: true
 theme: default
 paginate: true
 author: R. Johnson
-layout: base
+layout: presentation
 ---
 
 # A Level Physics OCR A
@@ -16,7 +16,7 @@ layout: base
 
 <!-- _class: objectives -->
 
-![bg left:30%](/images/circuit_capacitor2.gif)
+![bg left:30% fit](/images/circuit_capacitor2.gif)
 
 ## 6.1.1 Capacitors
 
