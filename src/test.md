@@ -1,7 +1,6 @@
 ---
 marp: true
 math: katex
-layout: presentation
 title: really cool lesson
 outcomes:
   - learn some stuff
@@ -9,11 +8,16 @@ outcomes:
 ---
 <!-- theme: custom-default -->
 <!-- class: invert -->
+
+{% include "title.md" %}
+
+---
+
 # a non marp markdown file
 
 here is some textsdfsd
 
-<!-- Here are some notes -->
+<!-- Here are some notes from slide 3-->
 
 ---
 

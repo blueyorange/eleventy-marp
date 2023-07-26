@@ -1,5 +1,7 @@
 const markdownIt = require("markdown-it");
-const marp = require("./marp.config.js");
+const marpConfig = require("./marp.config.js");
+const { Marp } = require("@marp-team/marp-core");
+const readCssFiles = require("./helpers/readCssFiles");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/images");
@@ -12,9 +14,20 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setLibrary("md", {
     render: function (content, data) {
       if (data.marp) {
+        const marp = new Marp(marpConfig);
+        const themesDirectory = "./themes";
+        readCssFiles(themesDirectory).forEach((themeCss) => {
+          marp.themeSet.add(themeCss.content);
+        });
         data.layout = "presentation";
-        let { html, css } = marp.render(content);
-        return `<style>${css}</style>${html}`;
+        let { html, css, comments } = marp.render(content);
+        return `<style>${css}</style>${html}${comments
+          .map((slideComments, index) => {
+            return `<div class="bespoke-marp-note" data-index="${index}" tabindex="0">
+          ${slideComments.map((comment) => `<p>${comment}</p>`).join("")}
+          </div>"`;
+          })
+          .join("")}`;
       } else {
         return md.render(content, data);
       }
