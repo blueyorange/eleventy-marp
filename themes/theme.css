@@ -1,10 +1,9 @@
 /*!
- * @import default
- *
- * @auto-scaling true
- * @size 16:9 1280px 720px
- * @size 4:3 960px 720px
- */
+*
+* @auto-scaling true
+* @size 16:9 1280px 720px
+* @size 4:3 960px 720px
+*/
 /* @theme basic*/
 
 section {
@@ -68,4 +67,19 @@ ul {
 
 section.columns > img {
   grid-area: right;
+}
+
+li {
+  animation: fade-in 1s ease;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

@@ -1,0 +1,22 @@
+/* @theme custom-default*/
+
+@import "default";
+
+h1 {
+  font-size: 3em;
+}
+
+li[data-bespoke-marp-fragment="active"] {
+  animation: fade-in 1s ease;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

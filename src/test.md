@@ -7,21 +7,13 @@ outcomes:
   - learn some stuff
   - learn it well
 ---
-
-<!-- theme: gaia -->
-
-# learning objectivsdfsfs
-
-{% for outcome in outcomes %}
-
-- {{ outcome }}
-  {% endfor %}
-
----
-
+<!-- theme: custom-default -->
+<!-- class: invert -->
 # a non marp markdown file
 
 here is some textsdfsd
+
+<!-- Here are some notes -->
 
 ---
 
@@ -37,3 +29,4 @@ $$F=ma$$
 
 * fragment 1
 * fragment 2
+* frag 3

@@ -4,6 +4,7 @@ const marp = require("./marp.config.js");
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/images");
   eleventyConfig.addPassthroughCopy("./src/css");
+  eleventyConfig.addPassthroughCopy("./src/js");
   eleventyConfig.addWatchTarget("./themes/");
   const md = markdownIt({ html: true });
   // Define a custom Markdown rendering engine that checks for the `marp: true`
