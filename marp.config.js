@@ -13,7 +13,6 @@ const config = {
 const marp = new Marp(config);
 const themesDirectory = "./themes";
 readCssFiles(themesDirectory).forEach((themeCss) => {
-  console.log(themeCss);
   marp.themeSet.add(themeCss.content);
 });
 
