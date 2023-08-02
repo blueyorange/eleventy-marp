@@ -1,6 +1,7 @@
 const fs = require("fs");
 
 function parseCategoryLine(line) {
+  // parses each heading line into a ref and a title
   const regex = /^(#+)\s+((?:\d+\.?)+)\s+(.*)$/;
   const match = line.match(regex);
 
@@ -19,6 +20,7 @@ function parseCategoryLine(line) {
 }
 
 function parseCategories(text) {
+  // extracts categories from text by looping through each line
   const lines = text.split("\n");
   const categories = [];
   for (const line of lines) {
@@ -29,17 +31,20 @@ function parseCategories(text) {
   return categories;
 }
 
-function getParentRef(category) {
+function getParent(category, categories) {
+  // uses the first part of the spec ref value
   const parentRef = category.ref.split(".").slice(0, -1).join(".");
-  return parentRef ? parentRef : null;
+  return parentRef
+    ? categories.find((category) => category.ref === parentRef).title
+    : null;
 }
 
-function getChildRefs(parent, categories) {
+function getChildren(parent, categories) {
   const re = new RegExp(`^${parent.ref}\\.\\d+$`);
   return categories.reduce((children, category) => {
     const match = category.ref.match(re);
     if (match) {
-      children.push(category.ref);
+      children.push(category.title);
     }
     return children;
   }, []);
@@ -51,8 +56,8 @@ function createTreeFromRefs(categories) {
     return {
       title,
       ref,
-      parent: getParentRef(category),
-      children: getChildRefs(category, categories),
+      parent: getParent(category, categories),
+      children: getChildren(category, categories),
     };
   });
 }
