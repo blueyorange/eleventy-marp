@@ -10,7 +10,8 @@
   "author": "Russell Johnson",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-navigation": "^0.3.5"
   },
   "dependencies": {
     "@marp-team/marp-core": "^3.7.0",

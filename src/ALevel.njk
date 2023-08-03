@@ -1,0 +1,22 @@
+---
+layout: base
+tags: alevel
+pagination:
+  addAllPagesToCollections: true
+  data: alevel.categories
+  size: 1
+  alias: category
+eleventyComputed:
+  eleventyNavigation:
+    key: "{{category.title}}"
+    title: "{{category.title}}"
+    parent: "{{category.parent}}"
+  title: "ALEVEL"
+---
+
+
+{{ category.title }}
+
+yo
+{{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
+yo

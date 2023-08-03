@@ -2,9 +2,6 @@
 marp: true
 math: katex
 title: really cool lesson
-outcomes:
-  - learn some stuff
-  - learn it well
 ---
 <!-- theme: custom-default -->
 <!-- class: invert -->

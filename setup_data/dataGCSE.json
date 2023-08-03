@@ -3,7 +3,7 @@
     {
       "title": "Energy",
       "ref": "1",
-      "parent": null,
+      "parent": "home",
       "children": ["1.1", "1.2", "1.3"]
     },
     {

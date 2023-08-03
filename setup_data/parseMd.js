@@ -31,12 +31,10 @@ function parseCategories(text) {
   return categories;
 }
 
-function getParent(category, categories) {
+function getParentRef(category) {
   // uses the first part of the spec ref value
   const parentRef = category.ref.split(".").slice(0, -1).join(".");
-  return parentRef
-    ? categories.find((category) => category.ref === parentRef).title
-    : null;
+  return parentRef;
 }
 
 function getChildren(parent, categories) {
@@ -56,8 +54,7 @@ function createTreeFromRefs(categories) {
     return {
       title,
       ref,
-      parent: getParent(category, categories),
-      children: getChildren(category, categories),
+      parent: getParentRef(category, categories),
     };
   });
 }
