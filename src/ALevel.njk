@@ -8,15 +8,17 @@ pagination:
   alias: category
 eleventyComputed:
   eleventyNavigation:
-    key: "{{category.title}}"
+    key: "{{category.ref}}"
     title: "{{category.title}}"
     parent: "{{category.parent}}"
-  title: "ALEVEL"
 ---
 
 
 {{ category.title }}
 
 yo
-{{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
+{{ collections.alevel | eleventyNavigation | eleventyNavigationToHtml | safe }}
 yo
+
+{% set navPages = collections.alevel | eleventyNavigationBreadcrumb(category.ref) %}
+{{ navPages | dump | safe }}

@@ -34,7 +34,7 @@ function parseCategories(text) {
 function getParentRef(category) {
   // uses the first part of the spec ref value
   const parentRef = category.ref.split(".").slice(0, -1).join(".");
-  return parentRef;
+  return parentRef ? parentRef : undefined;
 }
 
 function getChildren(parent, categories) {
