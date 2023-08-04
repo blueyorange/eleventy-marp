@@ -23,7 +23,9 @@ module.exports = function (eleventyConfig) {
         });
         data.layout = "presentation";
         let { html, css, comments } = marp.render(content);
-        return `<style>${css}</style>${html}${comments
+        return `<style>${css}</style>
+        ${data.theme ? `<!-- theme: ${data.theme} -->` : ""}
+        ${html}${comments
           .map((slideComments, index) => {
             return `<div class="bespoke-marp-note" data-index="${index}" tabindex="0">
           ${slideComments.map((comment) => `<p>${comment}</p>`).join("")}
