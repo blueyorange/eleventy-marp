@@ -37,6 +37,17 @@ function getParentRef(category) {
   return parentRef ? parentRef : undefined;
 }
 
+function getChildren(parent, categories) {
+  const re = new RegExp(`^${parent.ref}\\.\\d+$`);
+  return categories.reduce((children, category) => {
+    const match = category.ref.match(re);
+    if (match) {
+      children.push(category.title);
+    }
+    return children;
+  }, []);
+}
+
 function createTreeFromRefs(categories) {
   return categories.map((category, _, categories) => {
     const { title, ref } = category;
